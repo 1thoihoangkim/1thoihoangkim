@@ -1,0 +1,44 @@
+body {
+  font-family: Arial;
+  display:flex;
+  justify-content:center;
+  padding:50px;
+}
+
+.form{
+  border:2px solid black;
+  padding:50px;
+  border-radius:10px;
+  width:30%;
+  background-color:#99CCFF;
+  margin:300x;
+
+}
+h3{
+  text-align: center;
+  color:red;
+}
+.dichuyen{
+  text-align: center;
+}
+#button{
+  border:3px solid blue;
+  border-radius:3px;
+  text-align:center;
+  position: relative;
+  animation-name: example;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+}
+#button:hover{
+  background-color: burlywood;
+}
+
+@keyframes example {
+  0%   {background-color:red; left:10px; top:100px;}
+  25%  {background-color:yellow; left:100px; top:0px;}
+  50%  {background-color:blue; left:200px; top:300px;}
+  75%  {background-color:green; left:23px; top:300px;}
+  100% {background-color:red; left:90px; top:0px;}
+}
+
