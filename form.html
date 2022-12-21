@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+  <title>Title</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Document</title>
+
+  <style>
+     body{
+       background-color: bisque;
+     }
+    .forms{
+      height: 400px;
+      width: 350px;
+      border: #222222 1px solid;
+      border-radius: 10px;
+      top:100px;
+      position:absolute;
+      background-color: chartreuse;
+      left:500px;
+    }
+    .name,.phone,.email,.address{
+      padding-left: 50px;
+      padding-top:15px;
+    }
+    .name{
+      margin-top:20px;
+    }
+    input#name,input#email,input#address,input#phone {
+      width:260px;
+      height:30px;
+      border-radius: 12px;
+    }
+    input::radio{
+      height: 5px;
+      width: 5px;
+    }
+    input::placeholder {
+      font-weight: bold;
+      color: red;
+      height:30px;
+    }
+   .sex{
+   padding: 15px 44px;
+   }
+
+    .btn{
+      padding-left: 130px;
+    }
+    #kiemtra{
+      width: 80px;
+      height: 30px;
+      background-color: red;
+      border-radius: 10px;
+    }
+    span{
+
+    }
+  </style>
+</head>
+<body>
+<div class="forms">
+  <form>
+    <div class="" style="text-align:center"><h3>a321312</h3></div>
+  <div class="name"><label for=""></label> <span id="ten"></span><input type="text"  id="name" placeholder="Name: " required>
+   </div>
+  <div class="phone"><label for=""></label> <span id="insdt"></span>  <input type="phone" id="phone" placeholder="Sdt":></div>
+  <div class="email" <label for=""></label>  <span id="inra"></span> <input type="text" id="email" placeholder="Email:"></div>
+  <div class="address"> <label for=""> </label><span id="indiachi"></span> <input type="text" id="address" placeholder="Address:"> </div>
+    <div class="sex"><input type="radio">Male <input type="radio">Female</div>
+   <div class="btn"><input type="submit" id="kiemtra"onclick="myFunction()" >  </div>
+    <span id="errName" style="color: red;font-size: 20px; padding-left:70px"></span>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function myFunction(){
+    let name = $("#name").val();
+    let email =  $("#email").val();
+    let address = $("#address").val();
+    let phone = $("#phone").val();
+    if(name == ""||email== "" || address== "" || phone==""){
+      $("#errName").text("Nhập lại thông tin của bạn");
+
+    }else{$("#errName").text("Đăng kí thành công");}
+  }
+  $(document).ready(function(){
+    $("#name").blur(function(){
+      let name = $("#name").val();
+      if(name== ""){
+        $("#ten").text("Nhập vao đê");
+      }else{ $("#ten").hide();}
+    });
+  });
+
+  /*sdt   */
+  $(document).ready(function(){
+    $("#phone").blur(function(){
+      let sdt = $("#phone").val();
+      if(sdt ==""){
+        $("#insdt").text("Nhập 10 so thoi");
+      }else{ $("#insdt").hide();}
+    });
+  });
+//code email
+  $(document).ready(function(){
+    $("#email").blur(function(){
+        let email = $("#email").val();
+        if(email.indexOf("@")== -1){
+          $("#inra").text("Nhập đúng vào đi em");
+        }else{ $("#inra").hide();}
+        if( email== "" ){
+          $("#inra").text("Nhập vào đi em");
+        }
+    });
+  });
+
+  // code addrres
+  $(document).ready(function(){
+    $("#address").blur(function(){
+      let address = $("#address").val();
+      if(address == ""){
+        $("#indiachi").text("Nhập  vào đi em");
+      }else{ $("#indiachi").hide();}
+    });
+  });
+</script>
+</body>
+</html>
